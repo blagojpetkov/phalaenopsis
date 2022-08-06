@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #356974; background-color: #025a6c; background-color: #0c4755">
+    <div class="container-fluid">
+        <a id="name" class="navbar-brand" href="#" >Phalaenopsis Care</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${a1} ? 'active' : ''" aria-current="page" href="index.html">Дома</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${a2} ? 'active' : ''" href="roots.html">Корења <img src="images/roots.png" height="30" width="30"/></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${a3} ? 'active' : ''" href="leaves.html">Листови <img src="images/leaf.png" height="30" width="30"/></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${a4} ? 'active' : ''" href="stem.html">Стебло <img src="images/stem.png" height="30" width="30"/></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${a5} ? 'active' : ''" href="flowers.html">Цвет <img src="images/orchid_2.png" height="30" width="30"/></a>
+                </li>
+            </ul>
+            <form class="d-flex" method="post" th:action="@{/search}">
+                <input class="form-control me-2" type="search" placeholder="Пребарај" name="searchString" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Пребарај<img src="images/magnifier.png" height="15"
+                                                                               width="15"/></button>
+            </form>
+        </div>
+    </div>
+</nav>

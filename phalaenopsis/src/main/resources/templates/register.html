@@ -35,6 +35,9 @@
 <body>
 <th:block th:replace="fragments/header"></th:block>
 
+<div class="alert alert-danger" th:if="${param.error}">
+    <h5 class="text-center text-danger">Внесовте веќе постоечко корисничко име или пак лозинките не ви се совпаѓаат, ве молиме обидете се повторно</h5>
+</div>
 <form action="/register" method="post">
 
     <div class="container my-5" style="background-color: #0a4050;width: 35%; border: 2px solid gray; border-radius: 30px; padding: 40px;">

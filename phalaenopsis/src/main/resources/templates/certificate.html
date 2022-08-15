@@ -40,13 +40,15 @@
 
 <div data-aos="fade-up" class="container my-5" style="background-color: gray; border-radius: 10px; border: 10px solid darkslategray; color: white; background-image: url('images/orchid_main.png'); height: 600px;">
     <br>
-    <h1 style="font-weight: bolder; font-size: 50px" class="text-center">Сертификат за завршена обука на: <span th:text ="${#authentication.getPrincipal().getUsername()}"></span></h1>
-    <br><br><br><br><br><br><br>
-    <h1 style="font-weight: bolder; font-size: 45px" class="text-center">Сертификатот се однесува на завршена обука за одгледување на орхидеи од видот Phalaenopsis на ден <span th:text="${#dates.format(#dates.createNow(), 'dd.MM.yyyy')}"></span></h1>
+    <h4 style="font-weight: bolder; font-size: 35px" class="text-center">Сертификат за завршена обука на:</h4>
+    <br><br>
+    <h2 style="font-weight: bolder; font-size: 50px;" class="text-center" th:text ="${name} + ' ' + ${surname}"></h2>
+    <br><br>
+    <h1 style="font-weight: bolder; font-size: 45px" class="text-center">Сертификатот се однесува на завршена обука за одгледување на орхидеи од видот Phalaenopsis на ден <span th:text="${date}"></span></h1>
     <img height="150px;" src="images/seal_of_approval.png">
-<!--    <div class="d-flex justify-content-center">-->
-<!--    <button class="btn btn-lg btn-danger" style="position: absolute;bottom: 30px;">Преземи сертификат</button>-->
-<!--    </div>-->
+    <div class="d-flex justify-content-center">
+    <a href="/download_certificate" class="btn btn-lg btn-danger" style="position: absolute;bottom: 30px;">Преземи сертификат</a>
+    </div>
 </div>
 
 

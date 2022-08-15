@@ -16,7 +16,7 @@
             font-family: 'Century Gothic',serif
 
         }
-.nav-item{
+        .nav-item{
             margin-left: 20px;
             width: 145px;
             text-align: center;
@@ -48,13 +48,23 @@
 </h1>
     <br><br><br><br><br><br>
     <div sec:authorize="isAnonymous()" style="width: 732px; display: flex; ">
-        <a href="/login.html" style="flex:1; margin-right: 20px;" class="btn btn-lg btn-dark">Најава</a>
-        <a href="/register.html" style="flex:1;" class="btn btn-lg btn-dark">Регистрација</a>
+        <a href="/login" style="flex:1; margin-right: 20px;" class="btn btn-lg btn-dark">Најава</a>
+        <a href="/register" style="flex:1;" class="btn btn-lg btn-dark">Регистрација</a>
     </div>
 
-    <div sec:authorize="isAuthenticated()" style="width: 732px; display: flex; ">
-        <a href="/certification.html" style="flex:1; margin-right: 20px;" class="btn btn-lg btn-info">Освој сертификат</a>
+    <div sec:authorize="isAuthenticated()" th:if="${!hasCertificate}" style="width: 732px; display: flex; ">
+        <a href="/certification" style="flex:1; margin-right: 20px;" class="btn btn-lg btn-info">Освој сертификат</a>
         <a href="/logout" style="flex:1;" class="btn btn-lg btn-dark">Одјави се</a>
+    </div>
+
+    <div sec:authorize="isAuthenticated()" th:if="${hasCertificate}" style="width: 732px; display: flex; ">
+        <a href="/download_certificate" style="flex:1; margin-right: 20px;" class="btn btn-lg btn-info">Преземи сертификат</a>
+        <a href="/logout" style="flex:1;" class="btn btn-lg btn-dark">Одјави се</a>
+    </div>
+<br>
+    <div sec:authorize="isAuthenticated()" style="width: 732px; display: flex; ">
+        <a href="/profile" style="flex:1;" class="btn btn-lg btn-dark">Мој Профил</a>
+<!--        <a href="/logout" style="flex:1;" class="btn btn-lg btn-dark">Одјави се</a>-->
     </div>
 
 

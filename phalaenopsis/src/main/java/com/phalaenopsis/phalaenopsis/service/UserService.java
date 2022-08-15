@@ -16,6 +16,11 @@ public interface UserService extends UserDetailsService {
 
     User findByUsername(String username);
 
+    User save(User user);
 
-    User create(String username, String password, String role, String name, String surname);
+    User getAuthenticatedUser();
+
+    User create(String username, String password, String repeatPassword, String role, String name, String surname);
+
+    User updateProfile(/*String username, */String password, String repeatPassword, String role, String name, String surname);
 }

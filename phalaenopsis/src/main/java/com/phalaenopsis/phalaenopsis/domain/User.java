@@ -1,10 +1,9 @@
 package com.phalaenopsis.phalaenopsis.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
 @Table(name = "MyUsers")
 public class User {
@@ -18,11 +17,13 @@ public class User {
         this.role = role;
         this.name = name;
         this.surname = surname;
+
+        this.email = username+"@"+"gmail.com";
     }
     @Id
     @GeneratedValue
     private Long id;
-
+    private String email;
     private String username;
 
     private String password;
@@ -30,6 +31,36 @@ public class User {
     private String role;
     private String name;
     private String surname;
+
+    public String getFullName(){
+        return name + ' ' + surname;
+    }
+    public String getRoles(){
+        return role;
+    }
+
+    public String isEnabled(){
+        return "true";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @OneToOne
+    public Certificate certificate;
 
     public Long getId() {
         return id;

@@ -37,7 +37,10 @@
 <th:block th:replace="fragments/header"></th:block>
 <br>
 <br>
-<form action="/login.html" method="post">
+<div class="alert alert-danger" th:if="${param.error}">
+  <h5 class="text-center text-danger">Корисничкото име и лозинката не се совпаѓаат, ве молиме обидете се повторно</h5>
+</div>
+<form action="/login" method="post">
 
   <div class="container my-5" style="background-color: #0a4050;width: 35%; border: 2px solid gray; border-radius: 30px; padding: 40px;">
     <h3 class="text-light">Корисничко име</h3>

@@ -11,9 +11,11 @@ public class Topic {
     public String Description;
     public String Url;
     @ElementCollection // 1
+    //unnecessary
     @CollectionTable(name = "Keyword_List", joinColumns = @JoinColumn(name = "Id")) // 2
     @Column(name = "keywords") // 3
-    List<String> keywords;
+    //unnecessary
+    List<String> keywords; //'keywords' must start with a lowercase
 
     public Topic(String name, String description, String url, List<String> keywords) {
         this.Name = name;
